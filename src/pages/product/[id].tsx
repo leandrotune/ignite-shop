@@ -22,7 +22,7 @@ export default function Product({ product }: ProductProps) {
 
   // const router = useRouter()
 
-  async function  handleBuyProduct() {
+  async function handleBuyProduct() {
     try {
       setIsCreatingCheckoutSession(true)
       const response = await axios.post('/api/checkout', {
@@ -96,6 +96,6 @@ export const getStaticProps: GetStaticProps<any, {id: string}> = async ({ params
         defaultPriceId: price.id,
       }
     },
-    revalidate: 60 * 60 * 1, // hour 
+    revalidate: 60 * 60 * 1, // 1 hour 
   }
 }
